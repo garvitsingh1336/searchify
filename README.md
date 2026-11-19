@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/jusoftdev/searchify">
+  <a href="https://github.com/garvitsingh1336/searchify">
     <img src="https://i.imgur.com/20i2IKX.png" alt="Logo">
   </a>
 
@@ -10,14 +10,14 @@
   <p align="center">
     Hosting your own Searchengine was never easier
     <br />
-    <a href="https://github.com/jusoftdev/searchify"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/garvitsingh1336/searchify"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://searchify.vercel.app">View Demo</a>
     ·
-    <a href="https://github.com/jusoftdev/searchify/issues">Report Bug</a>
+    <a href="https://github.com/garvitsingh1336/searchify/issues">Report Bug</a>
     ·
-    <a href="https://github.com/jusoftdev/searchify/issues">Request Feature</a><br>&nbsp;
+    <a href="https://github.com/garvitsingh1336/searchify/issues">Request Feature</a><br>&nbsp;
 <a href="https://www.buymeacoffee.com/jusoft" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
  
   </p>
@@ -59,7 +59,7 @@
 
 _Please notice there is a 100 query limit per day for the google api, so don't be confused if there are no results on the public deploy_
 
-Please report inappropriate content that you might be redirected to via a [Github Issue](https://github.com/jusoftdev/searchify/issues/new) with the label `url report` on the repository or create a [pull request](https://github.com/jusoftdev/searchify/pulls) with the label `url report` already having the url removed in the code.
+Please report inappropriate content that you might be redirected to via a [GitHub issue](https://github.com/garvitsingh1336/searchify/issues/new) or create a [pull request](https://github.com/garvitsingh1336/searchify/pulls).
 
 Host your own Google
 <img src="https://i.imgur.com/vPdHLGG.png"/>
@@ -86,7 +86,7 @@ Install [Node.js LTS](https://nodejs.org/) (npm is included) and [Git](https://g
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/jusoftdev/searchify.git
+   git clone https://github.com/garvitsingh1336/searchify.git
    ```
 2. Install dependencies (npm works with the included lockfile)
    ```sh
@@ -122,7 +122,7 @@ Auto Darkmode<br>
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/jusoftdev/searchify/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/garvitsingh1336/searchify/issues) for a list of proposed features (and known issues).
 
 <!-- todo -->
 ## Todo (Sorted by importantness)
@@ -161,7 +161,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 JuSoft - [@jusoftdev](https://twitter.com/jusoftdev) - [Discord Server](http://jsft.be/discord) - support@jusoft.dev
 
-Project Link: [https://github.com/jusoftdev/searchify](https://github.com/jusoftdev/searchify)
+Project Link: [https://github.com/garvitsingh1336/searchify](https://github.com/garvitsingh1336/searchify)
 
 
 

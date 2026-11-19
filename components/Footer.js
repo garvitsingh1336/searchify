@@ -12,7 +12,7 @@ function Footer(){
                     Powered with NextJS and Google Search API by JuSoft
                 </div>
                 <div className="flex justify-center space-x-8 whitespace-nowrap md:justify-self-start">
-                    <a href="https://github.com/jusoftdev/searchify/issues/new"><p className="link">Report inappropriate teleported Website </p></a>
+                    <a href="https://github.com/garvitsingh1336/searchify/issues/new"><p className="link">Report an issue</p></a>
                 </div>
                 <div className="flex justify-center space-x-8 md:ml-auto">
                     <p>Settings</p>
