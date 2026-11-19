@@ -1,47 +1,34 @@
-import Image from 'next/image'
-import { useRouter } from "next/router"
-import { useRef } from "react"
-import {SearchIcon, XIcon} from "@heroicons/react/outline";
+import { useRouter } from "next/router";
+import { useRef } from "react";
+import { SearchIcon, XIcon } from "@heroicons/react/outline";
 import HeaderOptions from "./HeaderOptions";
 
-function Header(){
-    const router = useRouter();
-    const searchInputRef = useRef(null);
+function Header() {
+  const router = useRouter();
+  const searchInputRef = useRef(null);
 
-    const search = e => {
-        e.preventDefault();
+  const search = (event) => {
+    event.preventDefault();
+    const term = searchInputRef.current.value.trim();
+    if (term) router.push(`/search?term=${encodeURIComponent(term)}`);
+  };
 
-        const term = searchInputRef.current.value;
-
-        if(!term) return;
-
-        router.push(`/search?term=${term}`);
-    }
-return(
-    <header className="sticky top-0 bg-white dark:bg-gray-900">
-        <div className="flex w-full p-6 items-center">
-        <Image
-            src="https://i.imgur.com/rcEgr3V.png"
-            height={40}
-            width={120}
-            onClick={() => router.push("/")}
-            className="cursor-pointer"
-        />
-        <form className="flex flex-grow px-6 py-3 ml-10 mr-5 border border-gray-200 rounded-full flex-grow shadow-lg max-w-3xl items-center">
-            <input ref={searchInputRef} className="flex-grow w-full focus:outline-none dark:bg-gray-900 dark:text-white" type="text" />
-            <XIcon className="h-7 sm:mr-3 text-gray-500 cursor-pointer transition duration-100 transform hover:scale-125 dark:text-gray-300"
-            onClick={() => (searchInputRef.current.value = "")}
-            />
-            <SearchIcon className="border-l-2 pl-4 border-gray-300 h-6 text-blue-500 hidden sm:inline-flex "/>
-            <button hidden type='submit' onClick={search}>
-                Search</button>
+  return (
+    <header className="sticky top-0 z-10 border-b border-gray-100 bg-white/95 backdrop-blur dark:border-gray-800 dark:bg-gray-950/95">
+      <div className="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-4 sm:px-8">
+        <button type="button" onClick={() => router.push("/")} className="flex flex-shrink-0 items-center gap-2 text-lg font-semibold tracking-tight text-gray-900 dark:text-white" aria-label="Searchify home">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white"><SearchIcon className="h-5 w-5" /></span>
+          <span className="hidden sm:inline">Searchify</span>
+        </button>
+        <form onSubmit={search} className="flex min-w-0 max-w-2xl flex-1 items-center rounded-full border border-gray-200 bg-white px-4 py-2 shadow-sm transition focus-within:border-blue-400 focus-within:shadow-md dark:border-gray-700 dark:bg-gray-900">
+          <input ref={searchInputRef} defaultValue={typeof router.query.term === "string" ? router.query.term : ""} aria-label="Search the web" className="min-w-0 flex-1 bg-transparent text-sm text-gray-900 outline-none placeholder:text-gray-400 dark:text-white sm:text-base" type="search" placeholder="Search the web" />
+          {router.query.term && <button type="button" aria-label="Clear search" className="mr-2 text-gray-400 hover:text-gray-700 dark:hover:text-white" onClick={() => { searchInputRef.current.value = ""; searchInputRef.current.focus(); }}><XIcon className="h-5 w-5" /></button>}
+          <button type="submit" aria-label="Submit search" className="rounded-full p-2 text-blue-600 transition hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-gray-800"><SearchIcon className="h-5 w-5" /></button>
         </form>
-        </div>
-        {/* Header Options */}
-        <HeaderOptions/>
-
+      </div>
+      <HeaderOptions />
     </header>
-);
+  );
 }
 
-export default Header
+export default Header;

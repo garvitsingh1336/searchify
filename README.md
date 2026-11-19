@@ -80,18 +80,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* [npm](https://npmjs.com)
-* [NodeJS](https://nodejs.org)  
-* [yarn](https://yarnpkg.com/)
-
-  ```sh
-  npm install --global yarn
-  ```
-* NextJS
-  ```sh
-  yarn add next react react-dom
-  ```
+Install [Node.js LTS](https://nodejs.org/) (npm is included) and [Git](https://git-scm.com/downloads).
 
 ### Installation
 
@@ -99,23 +88,16 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/jusoftdev/searchify.git
    ```
-2. Install yarn packages
+2. Install dependencies (npm works with the included lockfile)
    ```sh
-   yarn
+   npm install --legacy-peer-deps
    ```
-3. [Get your custom Google API key (requires Google Account)](https://developers.google.com/custom-search/v1/using_rest)
-4. Insert your API key in `keys.js`
-```js
-export const API_KEY = 'Insert here'
-```
-5. Run
-```sh
-yarn dev
-```
-6. Build (optional)
-```sh
-yarn build
-```
+3. Create a Google API key in [Google Cloud Console](https://console.cloud.google.com/): create/select a project, enable **Custom Search API**, and create an API key under **APIs & Services / Credentials**. Restrict it to the Custom Search API where possible.
+4. Create a Programmable Search Engine at [programmablesearchengine.google.com](https://programmablesearchengine.google.com/). Add a site, then under **Setup** enable **Search the entire web**. Copy its Search engine ID (`cx`).
+5. Copy `.env.local.example` to `.env.local` and set `GOOGLE_API_KEY` and `GOOGLE_CSE_ID`. These credentials are read server-side and `.env.local` is ignored by Git. Do not commit real credentials. Revoke the old key previously present in `keys.js` and create a replacement.
+6. Run `npm run dev` and open http://localhost:3000. Without credentials or when Google returns an error/quota response, the bundled sample response is shown.
+
+Build (optional): `npm run build`
 
 
 <!-- USAGE EXAMPLES -->
